@@ -1,0 +1,34 @@
+{
+  "name": "playwright-ecommerce-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:smoke": "playwright test tests/ui/smoke.spec.ts",
+    "test:api": "playwright test tests/api/",
+    "test:e2e": "playwright test tests/e2e/",
+    "test:hybrid": "playwright test tests/hybrid/",
+    "test:chromium": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:webkit": "playwright test --project=webkit",
+    "test:ci": "playwright test --config=playwright.config.ts",
+    "report": "playwright show-report",
+    "codegen": "playwright codegen https://automationexercise.com"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^10.1.0",
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^25.0.1",
+    "allure-playwright": "^3.4.3",
+    "dotenv": "^17.2.3"
+  },
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  }
+}
