@@ -1,118 +1,167 @@
-🎭 Playwright E-commerce Test Automation
-A full-featured e-commerce testing automation framework using Playwright + TypeScript.
-🚀 Features
+# 🎭 Playwright E-commerce Test Automation
 
-✅ Page Object Model — clean architecture
-✅ Fixtures — reusable components
-✅ Hybrid Tests — API + UI testing
-✅ API Client — REST API integration
-✅ Custom Utilities — assertions and waiters
-✅ CI/CD — GitHub Actions
-✅ Multi-browser — Chromium, Firefox, WebKit
-✅ Parallel Execution — fast test runs
+![Playwright Tests](https://github.com/YOUR_USERNAME/playwright-ecommerce-tests/actions/workflows/playwright.yml/badge.svg)
+![Smoke Tests](https://github.com/YOUR_USERNAME/playwright-ecommerce-tests/actions/workflows/smoke.yml/badge.svg)
 
-📁 Project Structure
+Полноценный фреймворк для автоматизации тестирования e-commerce сайта с использованием Playwright + TypeScript.
+
+## 🚀 Особенности
+
+- ✅ **Page Object Model** — чистая архитектура
+- ✅ **Fixtures** — переиспользуемые компоненты
+- ✅ **Hybrid Tests** — API + UI тестирование
+- ✅ **API Client** — работа с REST API
+- ✅ **Custom Utilities** — assertions и waiters
+- ✅ **CI/CD** — GitHub Actions
+- ✅ **Multi-browser** — Chromium, Firefox, WebKit
+- ✅ **Parallel Execution** — быстрое выполнение
+
+## 📁 Структура проекта
+
+```
 playwright-ecommerce-tests/
 ├── tests/
-│   ├── api/              # API tests
-│   ├── ui/               # UI tests
-│   ├── hybrid/           # Hybrid (API + UI) tests
-│   ├── e2e/              # End-to-end scenarios
-│   └── architecture/     # Architecture tests
+│   ├── api/              # API тесты
+│   ├── ui/               # UI тесты
+│   ├── hybrid/           # Hybrid (API + UI) тесты
+│   ├── e2e/              # End-to-end сценарии
+│   └── architecture/     # Архитектурные тесты
 ├── pages/                # Page Objects
-├── api/                  # API clients
+├── api/                  # API клиенты
 ├── fixtures/             # Playwright fixtures
-├── data/                 # Test data and builders
-├── utils/                # Utilities (assertions, waiters)
-└── .github/workflows/    # CI/CD configuration
-🛠️ Installation
-bash# Clone the repository
+├── data/                 # Тестовые данные и builders
+├── utils/                # Утилиты (assertions, waiters)
+└── .github/workflows/    # CI/CD конфигурация
+```
+
+## 🛠️ Установка
+
+```bash
+# Клонировать репозиторий
 git clone https://github.com/YOUR_USERNAME/playwright-ecommerce-tests.git
 cd playwright-ecommerce-tests
 
-# Install dependencies
+# Установить зависимости
 npm install
 
-# Install browsers
+# Установить браузеры
 npx playwright install
-🧪 Running Tests
-bash# All tests
+```
+
+## 🧪 Запуск тестов
+
+```bash
+# Все тесты
 npm test
 
-# Smoke tests
+# Smoke тесты
 npm run test:smoke
 
-# API tests
+# API тесты
 npm run test:api
 
-# E2E tests
+# E2E тесты
 npm run test:e2e
 
-# Hybrid tests
+# Hybrid тесты
 npm run test:hybrid
 
-# Specific browser
+# Конкретный браузер
 npm run test:chromium
 
-# UI mode (interactive)
+# UI режим (интерактивный)
 npm run test:ui
 
-# Headed mode (browser visible)
+# Headed режим (видно браузер)
 npm run test:headed
-📊 Reports
-bash# Open HTML report
+```
+
+## 📊 Отчёты
+
+```bash
+# Открыть HTML отчёт
 npm run report
-🏗️ Architecture
-Page Object Model
-All pages extend BasePage:
-typescriptexport class ProductsPage extends BasePage {
+```
+
+## 🏗️ Архитектура
+
+### Page Object Model
+
+Все страницы наследуются от `BasePage`:
+
+```typescript
+export class ProductsPage extends BasePage {
   async openFirstProduct() {
     // ...
   }
 }
-Fixtures
-Reusable components for tests:
-typescripttest('my test', async ({ hybridLoggedUser, productsApi }) => {
-  // User is already logged in!
-  // API client is ready to use!
+```
+
+### Fixtures
+
+Переиспользуемые компоненты для тестов:
+
+```typescript
+test('my test', async ({ hybridLoggedUser, productsApi }) => {
+  // Пользователь уже залогинен!
+  // API client готов к использованию!
 });
-Hybrid Tests
-Combining API and UI:
-typescript// Prepare data via API (fast)
+```
+
+### Hybrid Tests
+
+Комбинируем API и UI:
+
+```typescript
+// Подготовка данных через API (быстро)
 await productsApi.search('dress');
 
-// Verify in UI (reliable)
+// Проверка в UI (надёжно)
 await productsPage.openFirstProduct();
-🔄 CI/CD
-Tests run automatically on:
+```
 
-✅ Push to main/master/develop
-✅ Pull Request
-✅ Schedule (daily at 2:00 AM)
-✅ Manually (workflow_dispatch)
+## 🔄 CI/CD
 
-Matrix Strategy
-Tests run in parallel across:
+Тесты автоматически запускаются на:
 
-3 browsers (Chromium, Firefox, WebKit)
-3 shards (splitting tests into parts)
+- ✅ Push в main/master/develop
+- ✅ Pull Request
+- ✅ Schedule (ежедневно в 2:00 AM)
+- ✅ Вручную (workflow_dispatch)
 
-📈 Test Statistics
-CategoryCountAPI Tests15+UI Tests10+Hybrid Tests12+E2E Tests16+TOTAL50+
-🎯 Test Coverage
+### Matrix Strategy
 
-✅ Authentication (Login/Signup)
-✅ Product Search
-✅ Cart Operations
-✅ Checkout Flow
-✅ Payment Process
-✅ Order Confirmation
-✅ Edge Cases
-✅ Negative Scenarios
+Тесты выполняются параллельно на:
+- 3 браузерах (Chromium, Firefox, WebKit)
+- 3 shards (разделение тестов на части)
 
-📝 Test Examples
-Simple E2E Test
-typescripttest('complete purchase', async ({ hybridLoggedUser }) => {
+## 📈 Статистика тестов
+
+| Категория | Количество |
+|-----------|------------|
+| API Tests | 15+ |
+| UI Tests | 10+ |
+| Hybrid Tests | 12+ |
+| E2E Tests | 16+ |
+| **TOTAL** | **50+** |
+
+## 🎯 Test Coverage
+
+- ✅ Authentication (Login/Signup)
+- ✅ Product Search
+- ✅ Cart Operations
+- ✅ Checkout Flow
+- ✅ Payment Process
+- ✅ Order Confirmation
+- ✅ Edge Cases
+- ✅ Negative Scenarios
+
+## 📝 Примеры тестов
+
+### Simple E2E Test
+
+```typescript
+test('complete purchase', async ({ hybridLoggedUser }) => {
   const { page } = hybridLoggedUser;
   
   await productsPage.open();
@@ -124,8 +173,12 @@ typescripttest('complete purchase', async ({ hybridLoggedUser }) => {
   
   expect(await confirmationPage.isOrderPlaced()).toBeTruthy();
 });
-Hybrid Test
-typescripttest('API → UI verification', async ({ productsApi, cartApi }) => {
+```
+
+### Hybrid Test
+
+```typescript
+test('API → UI verification', async ({ productsApi, cartApi }) => {
   // Get data via API
   const products = await productsApi.getAll();
   
@@ -136,18 +189,22 @@ typescripttest('API → UI verification', async ({ productsApi, cartApi }) => {
   const cartItems = await cartApi.getCartItems();
   expect(cartItems[0].name).toBe(products[0].name);
 });
-🤝 Contributing
+```
 
-Fork the repository
-Create your feature branch (git checkout -b feature/amazing-feature)
-Commit your changes (git commit -m 'Add amazing feature')
-Push to the branch (git push origin feature/amazing-feature)
-Open a Pull Request
+## 🤝 Contributing
 
-👤 Author
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 👤 Author
+
 Vladyslav Koptilov
-🙏 Acknowledgments
 
-Playwright
-Automation Exercise
-TypeScript
+## 🙏 Acknowledgments
+
+- [Playwright](https://playwright.dev/)
+- [Automation Exercise](https://automationexercise.com/)
+- [TypeScript](https://www.typescriptlang.org/)
