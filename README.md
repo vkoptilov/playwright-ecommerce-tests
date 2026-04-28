@@ -88,15 +88,6 @@ test('my test', async ({ hybridLoggedUser, productsApi }) => {
 });
 ```
 
-### Hybrid Tests
-
-Combined API and UI:
-
-```typescript
-await productsApi.search('dress');
-await productsPage.openFirstProduct();
-```
-
 ## 🔄 CI/CD
 
 - ✅ Push в main/master/develop
