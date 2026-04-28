@@ -1,6 +1,6 @@
 # 🎭 Playwright E-commerce Test Automation
 
-Solution for automation testing e-commerce project with Playwright + TypeScript created with free plan Claude Sonnet 
+Solution for automation testing e-commerce project with Playwright + TypeScript created with Claude sonnet free plan 
 
 - ✅ **Page Object Model** 
 - ✅ **Fixtures**
