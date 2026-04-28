@@ -16,17 +16,17 @@ Solution for automation testing e-commerce project with Playwright + TypeScript 
 ```
 playwright-ecommerce-tests/
 ├── tests/
-│   ├── api/              # API тесты
-│   ├── ui/               # UI тесты
-│   ├── hybrid/           # Hybrid (API + UI) тесты
-│   ├── e2e/              # End-to-end сценарии
-│   └── architecture/     # Архитектурные тесты
+│   ├── api/              # API 
+│   ├── ui/               # UI 
+│   ├── hybrid/           # Hybrid (API + UI) 
+│   ├── e2e/              # End-to-end 
+│   └── architecture/     # Architecture tests
 ├── pages/                # Page Objects
-├── api/                  # API клиенты
+├── api/                  # API clients
 ├── fixtures/             # Playwright fixtures
-├── data/                 # Тестовые данные и builders
-├── utils/                # Утилиты (assertions, waiters)
-└── .github/workflows/    # CI/CD конфигурация
+├── data/                 # Testing data builders
+├── utils/                # assertions, waiters
+└── .github/workflows/    # CI/CD config
 ```
 
 ## 🧪 Run tests
