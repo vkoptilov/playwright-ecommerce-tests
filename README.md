@@ -1,8 +1,5 @@
 # 🎭 Playwright E-commerce Test Automation
 
-![Playwright Tests](https://github.com/YOUR_USERNAME/playwright-ecommerce-tests/actions/workflows/playwright.yml/badge.svg)
-![Smoke Tests](https://github.com/YOUR_USERNAME/playwright-ecommerce-tests/actions/workflows/smoke.yml/badge.svg)
-
 Solution for automation testing e-commerce project with Playwright + TypeScript created with free plan Claude Sonnet 
 
 - ✅ **Page Object Model** 
